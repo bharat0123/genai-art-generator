@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Art Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 AI Art Generator</h1>
+            <p class="subtitle">Transform your imagination into stunning visual art</p>
+        </header>
+
+        <main>
+            <section class="generator-section">
+                <div class="input-container">
+                    <textarea 
+                        id="promptInput" 
+                        placeholder="Describe the artwork you want to create... e.g., 'A serene landscape with mountains and a lake at sunset'"
+                        rows="4"
+                    ></textarea>
+                    <div class="controls">
+                        <select id="sizeSelect">
+                            <option value="1024x1024">Square (1024x1024)</option>
+                            <option value="1792x1024">Landscape (1792x1024)</option>
+                            <option value="1024x1792">Portrait (1024x1792)</option>
+                        </select>
+                        <button id="generateBtn" class="btn-primary">
+                            <span class="btn-text">Generate Art</span>
+                            <span class="btn-loader" style="display: none;">⏳ Generating...</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="resultContainer" class="result-container" style="display: none;">
+                    <div class="image-wrapper">
+                        <img id="generatedImage" alt="Generated artwork" />
+                        <div class="image-overlay">
+                            <button id="downloadBtn" class="btn-icon" title="Download">
+                                ⬇️ Download
+                            </button>
+                            <button id="saveBtn" class="btn-icon" title="Save to Gallery">
+                                💾 Save
+                            </button>
+                        </div>
+                    </div>
+                    <p id="promptDisplay" class="prompt-display"></p>
+                </div>
+
+                <div id="errorContainer" class="error-container" style="display: none;">
+                    <p id="errorMessage"></p>
+                </div>
+            </section>
+
+            <section class="gallery-section">
+                <div class="gallery-header">
+                    <h2>🎭 Your Gallery</h2>
+                    <button id="refreshGalleryBtn" class="btn-secondary">🔄 Refresh</button>
+                </div>
+                <div id="gallery" class="gallery">
+                    <p class="empty-state">No artwork generated yet. Create your first masterpiece!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
